@@ -76,8 +76,7 @@ CREATE TABLE votes (
     comment_id INT NULL REFERENCES comments(id) UNIQUE,
     vote SMALLINT CHECK (vote IN (-1, 1)),
     vote_type VARCHAR(255) CHECK (vote_type IN ('post', 'comment')) UNIQUE,
-    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
-    -- UNIQUE(user_id, post_id, comment_id, vote_type)
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
 -- Votes table original
