@@ -6,7 +6,7 @@ import StarterKit from "@tiptap/starter-kit";
 const Tiptap = () => {
   const editor = useEditor({
     extensions: [StarterKit],
-    content: "<p>Hello World! 🌎️</p>",
+    content: "<p>Tiptap textbox</p>",
   });
 
   return <EditorContent editor={editor} />;

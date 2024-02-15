@@ -31,11 +31,7 @@ export function CommentForm({ postId, parentCommentId }) {
             Leave a comment, on post {postId}, parentcomment {parentCommentId}
           </h2> */}
           <form action={boundDispatch} className="flex flex-col space-y-3">
-            <textarea
-              name="comment"
-              className="bg-zinc-800 p-3 rounded"
-              placeholder="Type your comment..."
-            />
+            <textarea name="comment" className="bg-zinc-800 p-3 rounded" placeholder="Type your comment..." />
             <button type="submit" className="bg-pink-300 py-2 px-3 rounded">
               Submit
             </button>
