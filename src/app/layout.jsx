@@ -21,10 +21,7 @@ export default async function RootLayout({ children }) {
             <Link href="/" className="text-xl">
               Didit
             </Link>
-            <Link
-              href="/add-post"
-              className="ml-10 hover:bg-zinc-300 p-2 rounded bg-pink-300 text-black"
-            >
+            <Link href="/add-post" className="ml-10 hover:bg-zinc-300 p-2 rounded bg-pink-300 text-black">
               Add post
             </Link>
             <div className="ml-auto">

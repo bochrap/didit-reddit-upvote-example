@@ -26,7 +26,9 @@ export default async function SinglePostPage({ params }) {
 
   return (
     <div className="max-w-screen-lg mx-auto pt-10">
-      <h1 className="text-2xl">{post.title}</h1>
+      <h1 className="text-2xl">
+        {post.vote_total} - {post.title}
+      </h1>
       <p className="text-zinc-400 border-b border-zinc-800 mb-4">Posted by {post.name}</p>
       <main className="whitespace-pre-wrap">{post.body}</main>
 

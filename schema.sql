@@ -68,7 +68,19 @@ CREATE TABLE comments (
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
 
--- Votes table
+-- Votes table modified
+CREATE TABLE votes (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id) UNIQUE,
+    post_id INT NULL REFERENCES posts(id) UNIQUE,
+    comment_id INT NULL REFERENCES comments(id) UNIQUE,
+    vote SMALLINT CHECK (vote IN (-1, 1)),
+    vote_type VARCHAR(255) CHECK (vote_type IN ('post', 'comment')) UNIQUE,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+    -- UNIQUE(user_id, post_id, comment_id, vote_type)
+);
+
+-- Votes table original
 CREATE TABLE votes (
     id SERIAL PRIMARY KEY,
     user_id INT REFERENCES users(id),
